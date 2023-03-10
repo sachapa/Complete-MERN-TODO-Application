@@ -29,8 +29,8 @@ MONGO_URI = [securely provided]**
 
 > \*\* MONGO_URI points to a new [mongoDB cluster](https://www.mongodb.com) we've created, which'll host the database that can be used by all COE members. The connection string is all you'll need to connect to the remote DB.
 
-2. In the backend, run `npm install && npm i nodemon` to install [nodemon](https://www.npmjs.com/package/nodemon) along with all other dependencies listen in package.json
-3. At the root of the frontend directory, add backend URL to a .env file
+2. In the backend, run `npm install && npm i nodemon` to install [nodemon](https://www.npmjs.com/package/nodemon) along with all other dependencies listed in package.json
+3. At the root of the frontend directory, add backend URL to a .env file:
 
 ```
 REACT_APP_API_BASE_URL = http://localhost:5000
@@ -43,7 +43,7 @@ REACT_APP_API_BASE_URL = http://localhost:5000
 
 ## Optional Concurrently Setup
 
-If you don’t wanna start both servers separately (as in step 5 above), you can use concurrently to simultaneously start both servers in the same terminal window. To achieve this:
+If you don’t wanna start both servers separately (as in step 5 above), you can use [concurrently](https://www.npmjs.com/package/concurrently) to simultaneously start both servers in the same terminal window. To achieve this:
 
 1. In the backend directory, run `npm i -D concurrently` to install concurrently.
 2. Add the following dev script to backend package.json: `"dev": "concurrently \"npm start\" \"npm start --prefix ../todo-fronted\""`
