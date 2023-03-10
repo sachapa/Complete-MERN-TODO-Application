@@ -8,6 +8,51 @@
 
 ![App ScreenShot](https://raw.githubusercontent.com/SamiurRahmanMukul/Complete-MERN-TODO-Application/master/app_screenshot_v1.png)
 
+> **_NOTE:_** The original readme for the project can be found at the bottom of this page.
+
+# Instructions for Local Setup
+
+> **_NOTE:_** All the env configs below, except for the MONGO_URI, can be found in the respective env.example files in this repo
+
+1. In the root of the backend directory, create a .env file with these configs:
+
+```
+# APP ENVIRONMENT VARIABLES
+APP_NAME = Todo APP
+APP_PORT = 5000
+APP_BASE_URL = htpp://localhost/
+APP_API_PREFIX = /api/v1
+
+# DB ENVIRONMENT VARIABLES
+MONGO_URI = [securely provided]**
+```
+
+> \*\* MONGO_URI points to a new [mongoDB cluster](https://www.mongodb.com) we've created, which'll host the database that can be used by all COE members. The connection string is all you'll need to connect to the remote DB.
+
+2. In the backend, run `npm install && npm i nodemon` to install [nodemon](https://www.npmjs.com/package/nodemon) along with all other dependencies listen in package.json
+3. At the root of the frontend directory, add backend URL to a .env file
+
+```
+REACT_APP_API_BASE_URL = http://localhost:5000
+```
+
+4. In the frontend directory, run `npm install` to install all dependencies.
+5. Run `npm start` in both frontend, and backend directories.
+
+> **_NOTE_**: A shared DB also means that all TODOs will be shared among all the COE members - in case anyone is surprised to see a todo that they didn’t create.
+
+## Optional Concurrently Setup
+
+If you don’t wanna start both servers separately (as in step 5 above), you can use concurrently to simultaneously start both servers in the same terminal window. To achieve this:
+
+1. In the backend directory, run `npm i -D concurrently` to install concurrently.
+2. Add the following dev script to backend package.json: `"dev": "concurrently \"npm start\" \"npm start --prefix ../todo-fronted\""`
+3. Run `npm run dev` in the backend root directory to start both the front- and the back-end servers.
+
+---
+
+---
+
 # Complete MERN Stack Todo Application
 
 Hello 👋, I'm Samiur Rahman Mukul. At this repository i will be build a `Complete MERN Stack TODO Application ☋`. Using `Node.js, Express.js, MongoDB, React.js, Redux.js & Tailwind CSS`. So are you interested at this project let's connect with me. Thanks
